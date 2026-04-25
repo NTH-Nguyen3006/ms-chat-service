@@ -1,0 +1,12 @@
+{
+  "name": "marketplace-chat",
+  "version": "1.0.0",
+  "description": "Marketplace Chat",
+  "main": "src/server.js",
+  "author": "nguyen3006",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "5.2.1"
+  }
+}
