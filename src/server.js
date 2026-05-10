@@ -1,4 +1,5 @@
 import express from 'express'
+import { connectDB } from './libs/db.js';
 
 const app = express()
 
@@ -9,6 +10,8 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-app.listen(PORT, host, () => {
-    console.log(`Server is running on http://${host}:${PORT}`);
-});
+connectDB().then(() => {
+    app.listen(PORT, host, () => {
+        console.log(`Server is running on http://${host}:${PORT}`);
+    });
+})
