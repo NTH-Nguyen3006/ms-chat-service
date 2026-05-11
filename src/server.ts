@@ -1,19 +1,7 @@
-import express from 'express'
-import { connectDB } from './libs/db';
-import { PORT } from './libs/env';
+import { App } from "./app";
+import { IRoute } from "./core/interfaces";
 
-const app = express()
+const routes: IRoute[] = [
 
-const host = process.env.HOST || 'localhost'
-// const PORT = Number(process.env.PORT) || 3000
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-
-
-connectDB().then(() => {
-    app.listen(PORT, () => {
-        console.log(`Server is running on http://${host}:${PORT}`);
-    });
-})
+];
+const app = new App(routes);
